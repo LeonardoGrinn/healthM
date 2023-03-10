@@ -1,0 +1,296 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+ /* padding-top: 96px;*/
+  color: #5a5a5a;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+/* rtl:begin:ignore */
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+/* rtl:end:ignore */
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  /* rtl:remove */
+  letter-spacing: -.05rem;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+/* MORTGAGE DESIGN
+-------------------------------------------------- */
+.logo{
+	height:80px;
+}
+.logoheader{
+	height:80px!important;
+	position: absolute!important;
+  bottom: 15px!important;
+  left: 10px!important;
+bottom: 650px!important;
+	
+}
+.p0{
+	padding: 0px !important;
+}
+.bg-white {
+	background: #fff;
+}
+.btn-orange{
+border-color:#e87200;
+background: #e87200;
+color:#fff;
+}
+.btn-orange:hover{
+border-color:#e87200;
+background: #e87200;
+color:#fff;
+}
+.bg-blue{
+	background:#022c43;
+}
+.white{
+	color:#fff;
+}
+.hblue{	
+	background:#022c43;
+	border-top-right-radius: 35%;
+    border-bottom-right-radius: 35%;
+	padding:15vw 0;
+}
+.first{
+	padding:120px 0;
+}
+
+.first-section{
+	padding:10px 5% 10px 8%;
+}
+h1{
+	font-size: 2.8vw;
+    font-weight: 400;
+}
+.bg-header{
+	background:url("../img/header.jpg");
+	border-radius: 30%;
+	    background-position: center;
+    background-size: cover;
+}
+.marketing{
+	padding:120px 0;
+}
+h2.big{
+	
+	font-size:2.4vw;
+	font-weight:600;
+}
+p.big, .big li{
+	
+	font-size:1.7vw;
+	font-weight:600;
+	line-height: 2.3vw;
+}
+.blue{
+	color:#0a2240;
+}
+.bluec{
+	color:#1f67c1;
+}
+.img-100{
+	width:100%;
+}
+.mb-50{
+	margin-bottom:50px;
+}
+.v-center{
+	display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.v-bottom{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;	
+}
+.number{
+	width: 150px;
+    height: 150px;
+    color: #fff;
+    border-radius: 20px;
+	display: inline-flex;
+	font-size:100px;
+	
+}
+.bg1{
+    background: #b6b6b6;	
+}
+.bg2{
+    background: #818181;	
+}
+.bg3{
+    background: #1c1c1c;	
+}
+.second{
+	padding: 0 10%;
+	margin-bottom:80px;
+}
+.flow{
+	background: url(../img/flow.png);
+    margin-top: 120px;
+    height: 16vw;
+    background-size: 100% 100%;
+}
+.flow2{
+	background: #0a2240;
+	color:#fff;
+	padding:30px 5%;
+}
+.flow3{
+	background: #0a2240;
+	color:#fff;
+	padding:30px 5%;
+	    box-shadow: inset 0px 0px 25px rgb(0, 0, 0, 0.36);
+
+}
+.orange{
+	color:#e87200;
+}
+.bigorange{
+	font-size: 2.2vw;
+    font-weight: 600;
+	color:#e87200;
+}
+.cicon{
+	max-width: 150px;
+}
+.third{
+	padding:100px 0;
+	
+}
+.third h4{
+	padding:20px 0;
+}
+footer{
+	background:#e87200;
+	padding:80px 0;
+	color:#fff;
+}
+footer li{
+	    list-style: none;
+}
+.black{
+	color:#242424;
+}
+.mr3{
+	margin-right:3%;
+}
+/*=============================
+			RESPONSIVE
+===============================*/
+@media (max-width: 767px) {
+	.hblue{	
+	border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+h1 {
+    font-size: 6.8vw;
+    font-weight: 400;
+}
+.first {
+    padding: 80px 0;
+}
+	h2.big{
+	
+	font-size: 6vw;
+    font-weight: 600;
+    text-align: center;
+}
+p.big, .big li{	
+	font-size: 4.4vw;
+    font-weight: 600;
+    line-height: 5.5vw;
+}
+.first-section{
+	padding:10px 5% 10px 5%;
+}
+.bigorange {
+    font-size: 4vw;
+    font-weight: 600;
+    color: #e87200;
+    margin-top: -50px;
+}
+	
+}
