@@ -38,7 +38,8 @@ input::placeholder {
 ================================== */
 .section__hero {
   width: 100vw;
-  background: no-repeat url(../img/img-hero.png);
+  background: center no-repeat url(../img/img-hero.png);
+  background-size: 100%;
   display: grid;
   grid-template-columns: 2fr 250px 0.5fr;
 }
