@@ -1,0 +1,144 @@
+/* ==================================
+/////////// G E N E R A L /////////// 
+================================== */
+
+:root {
+  --main-blue-color: #186ccc;
+  --main-red-color: #b61915;
+  --main-gray-color: #55565a
+}
+
+* {
+ overflow-x: hidden;
+ margin: 0px;
+ font-family: 'Poppins';
+} /* ./General */
+
+
+body {
+  color: var(--main-gray-color);
+}
+/* Components */
+
+
+.btn { /* Buttons */
+  border: none;
+  padding: 8px 32px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input::placeholder {
+  opacity: 0.5;
+}
+
+
+/* ==================================
+////////////// H E R O ////////////// 
+================================== */
+.section__hero {
+  width: 100vw;
+  background: no-repeat url(../img/img-hero.png);
+  display: grid;
+  grid-template-columns: 2fr 250px 0.5fr;
+}
+
+
+/* Hero Form */
+.section__hero-textbox {
+  background: var(--main-red-color);
+  height: 50vh;
+  color: white;
+
+  /* Center content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section__hero-textbox-content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+}
+
+.section__hero-textbox-content h4 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.section__hero-form {
+  margin-top: 2rem;
+}
+
+.section__hero-form  input[type=text] {
+  text-align: center;
+  width: 100px;
+ 
+}
+
+
+
+.btnForm {
+  background: var(--main-blue-color);
+  color: white;
+  margin-top: 1rem;
+  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, .2);
+  transition: all 0.3s ease-out;
+}
+
+.btnForm:hover {
+  box-shadow: none;
+  transform: translateY(-2.5px);
+}
+/* ./Hero Form */
+
+.section-textbanner {
+  background: var(--main-blue-color);
+  font-weight: 500;
+  padding: 5px;
+  color: white;
+  width: 100vw;
+  text-align: center;
+} /* ./Section Hero */
+
+
+/* ==================================
+///////////// S T E P S ///////////// 
+================================== */
+
+.section__steps-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Stpes Description */
+.section__steps-description {
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.section__steps-icon {
+  /* display: inline-block; */
+  
+}
+
+.section__steps-icon span {
+  background: var(--main-blue-color);
+  color: white;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.section__steps-icon p {
+  font-size: 1rem;
+  margin-top: 1rem;
+  font-weight: 500;
+}
