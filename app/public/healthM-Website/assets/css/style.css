@@ -17,6 +17,7 @@
 
 body {
   color: var(--main-gray-color);
+  font-size: 1rem;
 }
 /* Components */
 
@@ -32,10 +33,26 @@ input::placeholder {
   opacity: 0.5;
 }
 
+.padding-section {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 
 /* ==================================
 ////////////// H E R O ////////////// 
 ================================== */
+.website-logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 50px;
+  height: 25px;
+  background: var(--main-red-color);
+  color: white;
+  text-align: center;
+}
+
+
 .section__hero {
   width: 100vw;
   background: center no-repeat url(../img/img-hero.png);
@@ -142,4 +159,31 @@ input::placeholder {
   font-size: 1rem;
   margin-top: 1rem;
   font-weight: 500;
+}
+
+/* ==================================
+///////////// I N F O ///////////// 
+================================== */
+
+.section__info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  margin-top: 2.5rem;
+  background: var(--main-blue-color);
+}
+
+.section__info h1 {
+  margin-bottom: 2rem;
+}
+
+.section__info-about, .section__info-health {
+  padding-top: 2rem;
+  padding-bottom: 2rem; 
+  color: white;
+}
+
+
+.section__info-health a {
+  color: white;
 }
