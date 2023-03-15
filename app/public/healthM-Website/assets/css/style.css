@@ -38,6 +38,13 @@ input::placeholder {
   padding-right: 2rem;
 }
 
+
+/***************************************************************/
+/* =========================================================== */
+/* //////////////////// H O M E  P A G E ///////////////////// */
+/* =========================================================== */
+/***************************************************************/
+
 /* ==================================
 ////////////// H E R O ////////////// 
 ================================== */
@@ -142,16 +149,11 @@ input::placeholder {
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* Stpes Description */
+/* Steps Description */
 .section__steps-description {
   font-weight: 500;
   margin-top: 2rem;
   margin-bottom: 4rem;
-}
-
-.section__steps-icon {
-  /* display: inline-block; */
-  
 }
 
 .section__steps-icon span {
@@ -198,4 +200,48 @@ input::placeholder {
 
 .section__info-health a {
   color: white;
+}
+
+
+
+/***************************************************************/
+/* =========================================================== */
+/* ////////////////// S T E P S  P A G E S /////////////////// */
+/* =========================================================== */
+/***************************************************************/
+
+/* ==================================
+////////// S T E P S  B A R ///////// 
+================================== */
+
+.section__stepsbar-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.section__stepsbar-icon span {
+ background: var(--main-gray-color);
+  color: white;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.section__stepsbar-icon p {
+  font-size: 1rem;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.step-completed {
+  opacity: 0.5;
+}
+
+.current-step {
+  background: var(--main-blue-color) !important; 
 }
