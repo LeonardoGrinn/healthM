@@ -111,6 +111,18 @@ input::placeholder {
 }
 /* ./Hero Form */
 
+/* Hero Features*/
+.section__hero-features {
+  text-align: left;
+  width: 150px;
+  margin-top: 1rem;
+}
+
+.section__hero-features p {
+  font-size: 0.6rem;
+}
+
+
 .section-textbanner {
   background: var(--main-blue-color);
   font-weight: 500;
