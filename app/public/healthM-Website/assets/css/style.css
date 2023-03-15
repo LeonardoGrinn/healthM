@@ -29,6 +29,19 @@ body {
   cursor: pointer;
 }
 
+.btnForm {
+  background: var(--main-blue-color);
+  color: white;
+  margin-top: 1rem;
+  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, .2);
+  transition: all 0.3s ease-out;
+}
+
+.btnForm:hover {
+  box-shadow: none;
+  transform: translateY(-2.5px);
+}
+
 input::placeholder {
   opacity: 0.5;
 }
@@ -100,21 +113,6 @@ input::placeholder {
   text-align: center;
   width: 100px;
  
-}
-
-
-
-.btnForm {
-  background: var(--main-blue-color);
-  color: white;
-  margin-top: 1rem;
-  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, .2);
-  transition: all 0.3s ease-out;
-}
-
-.btnForm:hover {
-  box-shadow: none;
-  transform: translateY(-2.5px);
 }
 /* ./Hero Form */
 
@@ -216,7 +214,8 @@ input::placeholder {
 
 .section__stepsbar-box {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 2rem;
 }
 
 .section__stepsbar-icon span {
@@ -244,4 +243,50 @@ input::placeholder {
 
 .current-step {
   background: var(--main-blue-color) !important; 
+}
+
+/* ==================================
+////// P R O G R E S S  B A R /////// 
+================================== */
+.section__progressbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 3rem;
+
+}
+.section__progressbar-box {
+  height: 25px;
+  width: 100%;
+  border: 2px solid var(--main-blue-color);
+}
+
+.section__progressbar-filled {
+  background: var(--main-blue-color);
+  height:25px;
+  width:20%;
+  transform: translateY(-25px);
+}
+
+.section__progressbar-fill{
+  background: var(--main-blue-color);
+  height:25px;
+  width:40%;
+  opacity: 0.5;
+}
+
+
+/* ==================================
+////// S T E P  F O R M /////// 
+================================== */
+
+.section__step-form {
+  margin-top: 2rem;
+}
+
+.section__step-form  input[type=text] {
+  text-align: center;
+  width: 50%;
 }

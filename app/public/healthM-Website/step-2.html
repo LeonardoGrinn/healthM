@@ -17,7 +17,7 @@
 
 <body>
 
-  <section class="section__stepsbar">
+  <section class="section__stepsbar padding-section">
    
     <div class="section__stepsbar-box">
 
@@ -44,14 +44,38 @@
         <center><span><i class="fa-solid fa-heart-pulse"></i></span></center>
         <center><p>Life Events</p></center>
       </div> <!-- ./section__steps-icon -->
+
+      <!-- section__steps-icon -->
+      <div class="section__stepsbar-icon">
+        <center><span><i class="fa-solid fa-heart-pulse"></i></span></center>
+        <center><p>Results</p></center>
+      </div> <!-- ./section__steps-icon -->
       
     </div>
 
   </section><!-- section__currentStep -->
 
+  <!-- section__progressbar -->
+  <section class="section__progressbar padding-section">
+
+    <div class="section__progressbar-box">
+      <div class="section__progressbar-fill"></div>
+      <div class="section__progressbar-filled"></div> 
+    </div>
+
+  </section><!-- ./section__progressbar -->
+
   <!-- section__currentStep -->
-  <section class="section__currentstep">
+  <section class="section__currentstep padding-section">
     
+    <!-- First Form -->
+    <center>
+      <form class="section__step-form">
+        <label>How old are you?</label> <br/><br/>
+        <input type="text" id="" placeholder="Introduce your age" name="zipCode"> <br/>
+        <input class="btn btnForm" value="Next" type="submit">
+      </form>
+    </center> <!-- ./First Form -->
    
   </section><!-- section__currentStep -->
 
