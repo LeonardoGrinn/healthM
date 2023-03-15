@@ -266,14 +266,14 @@ input::placeholder {
 .section__progressbar-filled {
   background: var(--main-blue-color);
   height:25px;
-  width:20%;
+  
   transform: translateY(-25px);
 }
 
 .section__progressbar-fill{
   background: var(--main-blue-color);
   height:25px;
-  width:40%;
+  
   opacity: 0.5;
 }
 
@@ -286,7 +286,8 @@ input::placeholder {
   margin-top: 2rem;
 }
 
-.section__step-form  input[type=text] {
+.section__step-form  input[type=text],
+.section__step-form  input[type=number] {
   text-align: center;
   width: 50%;
 }

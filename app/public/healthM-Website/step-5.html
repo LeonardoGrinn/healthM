@@ -12,7 +12,7 @@
   <!-- Font Family -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <title>Step 2 | Age</title>
+  <title>Step 5 | Life Events</title>
 </head>
 
 <body>
@@ -28,26 +28,26 @@
       </div> <!-- ./section__steps-icon -->
 
        <!-- section__steps-icon -->
-      <div class="section__stepsbar-icon">
-        <center><span class="current-step"><i class="fa-solid fa-magnifying-glass"></i></span></center>
+      <div class="section__stepsbar-icon step-completed">
+        <center><span><i class="fa-solid fa-magnifying-glass"></i></span></center>
         <center><p>Household Size</p></center>
       </div> <!-- ./section__steps-icon -->
 
       <!-- section__steps-icon -->
-      <div class="section__stepsbar-icon">
+      <div class="section__stepsbar-icon step-completed">
         <center><span><i class="fa-solid fa-money-bill-trend-up"></i></span></center>
         <center><p>Income</p></center>
       </div> <!-- ./section__steps-icon -->
       
       <!-- section__steps-icon -->
-      <div class="section__stepsbar-icon">
+      <div class="section__stepsbar-icon step-completed">
         <center><span><i class="fa-solid fa-heart-pulse"></i></span></center>
         <center><p>Life Events</p></center>
       </div> <!-- ./section__steps-icon -->
 
       <!-- section__steps-icon -->
       <div class="section__stepsbar-icon">
-        <center><span><i class="fa-solid fa-square-poll-vertical"></i></span></center>
+        <center><span class="current-step"><i class="fa-solid fa-square-poll-vertical"></i></span></center>
         <center><p>Results</p></center>
       </div> <!-- ./section__steps-icon -->
       
@@ -59,8 +59,8 @@
   <section class="section__progressbar padding-section">
 
     <div class="section__progressbar-box">
-      <div class="section__progressbar-fill" style="width:20%"></div>
-      <div class="section__progressbar-filled" style="width:0%"></div> 
+      <div class="section__progressbar-fill" style="width:80%"></div>
+      <div class="section__progressbar-filled" style="width:60%"></div> 
     </div>
 
   </section><!-- ./section__progressbar -->
@@ -71,9 +71,14 @@
     <!-- First Form -->
     <center>
       <form class="section__step-form">
-        <label>How old are you?</label> <br/><br/>
-        <input type="text" id="" placeholder="Introduce your age" name="zipCode"> <br/>
-        <input class="btn btnForm" value="Next" type="submit">
+        <label>What is your estimated annual Household income for 2023?</label> <br/><br/>
+        <p><small><i>Enter your estimated income range for everyone your included in your Household</i></small></p> <br/>
+        
+        <input style="width: 50%;" class="btn btnForm" name="optionA" value="Losing or lost health coverage" type="submit">
+        <input style="width: 50%;" class="btn btnForm" name="optionB" value="Changes with my family" type="submit">
+        <input style="width: 50%;" class="btn btnForm" name="optionC" value="Started or left a job" type="submit">
+        <input style="width: 50%;" class="btn btnForm" name="optionD" value="Move to a new state" type="submit">
+        <input style="width: 50%;" class="btn btnForm" name="optionI" value="None of these apply" type="submit">
       </form>
     </center> <!-- ./First Form -->
    

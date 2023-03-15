@@ -12,7 +12,7 @@
   <!-- Font Family -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <title>Step 2 | Age</title>
+  <title>Step 3 | Household Size</title>
 </head>
 
 <body>
@@ -28,14 +28,14 @@
       </div> <!-- ./section__steps-icon -->
 
        <!-- section__steps-icon -->
-      <div class="section__stepsbar-icon">
-        <center><span class="current-step"><i class="fa-solid fa-magnifying-glass"></i></span></center>
+      <div class="section__stepsbar-icon step-completed">
+        <center><span><i class="fa-solid fa-magnifying-glass"></i></span></center>
         <center><p>Household Size</p></center>
       </div> <!-- ./section__steps-icon -->
 
       <!-- section__steps-icon -->
       <div class="section__stepsbar-icon">
-        <center><span><i class="fa-solid fa-money-bill-trend-up"></i></span></center>
+        <center><span class="current-step"><i class="fa-solid fa-money-bill-trend-up"></i></span></center>
         <center><p>Income</p></center>
       </div> <!-- ./section__steps-icon -->
       
@@ -59,8 +59,8 @@
   <section class="section__progressbar padding-section">
 
     <div class="section__progressbar-box">
-      <div class="section__progressbar-fill" style="width:20%"></div>
-      <div class="section__progressbar-filled" style="width:0%"></div> 
+      <div class="section__progressbar-fill" style="width:40%"></div>
+      <div class="section__progressbar-filled" style="width:20%"></div> 
     </div>
 
   </section><!-- ./section__progressbar -->
@@ -71,8 +71,9 @@
     <!-- First Form -->
     <center>
       <form class="section__step-form">
-        <label>How old are you?</label> <br/><br/>
-        <input type="text" id="" placeholder="Introduce your age" name="zipCode"> <br/>
+        <label>What is your Household size?</label> <br/><br/>
+        <p><small><i>Include yourself, your spouse if married, and anyone you'll claim as a tax dependent</i></small></p> <br/>
+        <input type="number" id="" placeholder="Household Size" name="householdSize"> <br/>
         <input class="btn btnForm" value="Next" type="submit">
       </form>
     </center> <!-- ./First Form -->
