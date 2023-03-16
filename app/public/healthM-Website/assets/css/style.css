@@ -42,6 +42,11 @@ body {
   transform: translateY(-2.5px);
 }
 
+.btnForm a {
+  text-decoration: none;
+  color: inherit;
+}
+
 input::placeholder {
   opacity: 0.5;
 }
@@ -290,4 +295,20 @@ input::placeholder {
 .section__step-form  input[type=number] {
   text-align: center;
   width: 50%;
+}
+
+
+/* ==================================
+//////////// T H A N K S //////////// 
+================================== */
+
+.section__thanks-features {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section__thanks-f {
+  text-align: left;
 }
