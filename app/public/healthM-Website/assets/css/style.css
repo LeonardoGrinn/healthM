@@ -59,6 +59,114 @@ input::placeholder {
 
 /***************************************************************/
 /* =========================================================== */
+/* ////////////////////// N A V  B A R /////////////////////// */
+/* =========================================================== */
+/***************************************************************/
+
+.topnav {
+  overflow: hidden;
+  background-color: var(--main-blue-color);
+  position: fixed;
+  width: 100vw;
+
+  /* box-shadow: inset 0 -7px 0 var(--main-red-color); */
+
+  transition: all 0.3s ease-out;
+
+}
+
+.topnav a {
+  /*float: right;*/
+  display: inline-block;
+
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+
+  transition: all 0.3s ease-out;
+}
+
+.navBox {
+  display: inline-block;
+  float: right;
+  height: 54px;
+}
+
+.topnav a:hover {
+  background-color: var(--main-red-color);
+  color: white
+}
+
+.topnav a.active {
+  background-color: var(--main-gray-color);
+  color: white;
+}
+
+.navBarIcon {
+  display: none !important;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a {display: none;}
+ 
+
+  .navBox {
+    width: 100vw;
+    
+  }
+
+  .navBarIcon {
+    display: block !important;
+    float: right;
+  }
+
+  .navBarIcon:hover {
+    background-color: var(--main-blue-color) !important;
+  }
+
+  
+
+
+
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 100vw;
+
+    transition: all 0.3s ease-out;
+  }
+  .topnav.responsive .navBarIcon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+  }
+
+  .topnav.responsive a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .topnav.responsive a.active {
+    background-color: var(--main-blue-color) !important;
+  }
+
+  .topnav.responsive a:first-child {
+   
+    padding-top: 4rem;
+
+  }
+}
+
+
+/***************************************************************/
+/* =========================================================== */
 /* //////////////////// H O M E  P A G E ///////////////////// */
 /* =========================================================== */
 /***************************************************************/
@@ -67,7 +175,7 @@ input::placeholder {
 ////////////// H E R O ////////////// 
 ================================== */
 .website-logo {
-  position: absolute;
+  position: fixed;
   top: 1rem;
   left: 1rem;
   width: 50px;
@@ -80,8 +188,9 @@ input::placeholder {
 
 .section__hero {
   width: 100vw;
-  background: center no-repeat url(../img/img-hero.png);
+  background: center top no-repeat url(../img/img-hero.png);
   background-size: 100%;
+  height: 50vh;
   display: grid;
   grid-template-columns: 2fr 250px 0.5fr;
 }
@@ -141,6 +250,14 @@ input::placeholder {
   width: 100vw;
   text-align: center;
 } /* ./Section Hero */
+
+@media screen and (max-width: 600px) {
+  
+  .section__hero  {
+    grid-template-columns: 1fr;
+  }
+
+}
 
 
 /* ==================================
