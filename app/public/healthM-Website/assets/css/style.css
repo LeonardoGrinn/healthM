@@ -37,7 +37,40 @@ body {
   transition: all 0.3s ease-out;
 }
 
-.btnForm:hover {
+.facebook {
+  background-color:#4267B2;
+  margin-right: 1rem;
+  margin-top: 2.5px;
+  width: 151px;
+  vertical-align: middle;
+}
+
+.facebook:hover {
+  background-color:#345089;
+}
+
+.btnSocial {
+  display: block;
+  color: white;
+  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, .2);
+  transition: all 0.3s ease-out;
+  font-size: 12px;
+  
+  padding: 1px 12px 1px 12px !important;
+  border-radius: 9999px;
+  height: 28px;
+  box-sizing: border-box;
+
+  position: relative;
+
+}
+
+.btnSocial i {
+  font-size: 14px;
+  transform: translateY(5px);
+}
+
+.btnForm:hover, .btnSocial {
   box-shadow: none;
   transform: translateY(-2.5px);
 }
@@ -70,7 +103,7 @@ input::placeholder {
   width: 100vw;
 
   /* box-shadow: inset 0 -7px 0 var(--main-red-color); */
-
+  z-index: 999;
   transition: all 0.3s ease-out;
 
 }
@@ -83,7 +116,8 @@ input::placeholder {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 14px;
+  cursor: pointer;
 
   transition: all 0.3s ease-out;
 }
@@ -91,7 +125,7 @@ input::placeholder {
 .navBox {
   display: inline-block;
   float: right;
-  height: 54px;
+  height: 49px;
 }
 
 .topnav a:hover {
@@ -108,12 +142,49 @@ input::placeholder {
   display: none !important;
 }
 
-@media screen and (max-width: 600px) {
+/* Drop Down */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  top: 49px;
+  right: 0;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: var(--main-gray-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: all 0.3s ease-out;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--main-gray-color);
+  color: white;
+}
+
+.show {display: block;}
+
+@media screen and (max-width: 800px) {
   .topnav a {display: none;}
  
 
   .navBox {
     width: 100vw;
+    height: auto
     
   }
 
@@ -126,16 +197,18 @@ input::placeholder {
     background-color: var(--main-blue-color) !important;
   }
 
-  
 
-
+  .dropdown-content {
+    top: 295px;
+    z-index: 999;
+  }
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .topnav.responsive {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr;
     width: 100vw;
 
     transition: all 0.3s ease-out;
@@ -144,7 +217,7 @@ input::placeholder {
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 999;
+    z-index: 2;
   }
 
   .topnav.responsive a {
@@ -183,6 +256,7 @@ input::placeholder {
   background: var(--main-red-color);
   color: white;
   text-align: center;
+  z-index: 999;
 }
 
 
@@ -251,13 +325,7 @@ input::placeholder {
   text-align: center;
 } /* ./Section Hero */
 
-@media screen and (max-width: 600px) {
-  
-  .section__hero  {
-    grid-template-columns: 1fr;
-  }
 
-}
 
 
 /* ==================================
@@ -429,3 +497,19 @@ input::placeholder {
 .section__thanks-f {
   text-align: left;
 }
+
+
+/***************************************************************/
+/* =========================================================== */
+/* //////////////// R E F E R E A L  P A G E ///////////////// */
+/* =========================================================== */
+/***************************************************************/
+
+.section__referral-share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+  
