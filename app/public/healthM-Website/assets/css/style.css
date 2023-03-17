@@ -325,6 +325,63 @@ input::placeholder {
   text-align: center;
 } /* ./Section Hero */
 
+@media screen and (max-width: 800px) {
+  .section__hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .section__hero-textbox {
+    height: auto;
+    
+  }
+
+  .section__hero-textbox form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section__hero-form {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  .section__hero-form input[type=text] {
+    width: 50%;
+    margin-right: 1rem;
+    margin-top: 1rem;
+
+  }
+
+  .section__hero-textbox-content h4 {
+    padding-top: 2rem;
+  }
+  .section__hero-features {
+    display: none;
+  }
+
+  .section__hero-empty-bottom {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .section__hero {
+
+    background: center top no-repeat url(../img/img-hero.png);
+    background-size: 150%;
+
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .section__hero {
+
+    background: center top no-repeat url(../img/img-hero.png);
+    background-size: 185%;
+
+  }
+}
 
 
 
@@ -363,6 +420,13 @@ input::placeholder {
   font-weight: 500;
 }
 
+@media screen and (max-width: 600px)  {
+  .section__steps-box {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+}
+
 /* ==================================
 ///////////// I N F O ///////////// 
 ================================== */
@@ -377,6 +441,7 @@ input::placeholder {
 
 .section__info h1 {
   margin-bottom: 2rem;
+  font-size: 1.3rem;
 }
 
 .section__info-about, .section__info-health {
@@ -390,6 +455,43 @@ input::placeholder {
   color: white;
 }
 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (max-width: 800px)  {
+  .section__info {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .section__info-health {
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;  
+  }
+}
+
+@media screen and (max-width: 600px)  {
+
+  .section__info-health,
+  .section__info-about {
+    padding: 1rem;
+  }
+
+  .section__info-health {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Extra small devices (phones, 600px and down)
+@media only screen and (max-width: 600px) {...}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */ 
 
 
 /***************************************************************/
@@ -405,7 +507,7 @@ input::placeholder {
 .section__stepsbar-box {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 
 .section__stepsbar-icon span {
