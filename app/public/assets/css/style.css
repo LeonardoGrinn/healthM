@@ -403,12 +403,24 @@ input::placeholder {
 
 }
 
+/* Half window desktop */
+@media screen and (max-height: 1090px) {
+
+  .section__hero {
+    height: 50vh;
+    background-size: 100vw auto;
+  }
+
+}
+
 /* Tablets */
 @media screen and (max-width: 800px) {
   .section__hero {
 
     background: center top no-repeat url(../img/img-hero.png);
     background-size: 150%;
+
+    height: 70vh;
   }
 
   .section__hero-textbox-content h4 {
@@ -423,6 +435,14 @@ input::placeholder {
     background: center top no-repeat url(../img/img-hero.png);
     background-size: 185%;
 
+    height: 50vh;
+
+  }
+}
+
+@media screen and (max-width: 380px)  {
+  .section__hero-textbox-content h4 {
+    font-size: 0.8rem;
   }
 }
 
