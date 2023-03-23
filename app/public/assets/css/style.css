@@ -428,6 +428,16 @@ input::placeholder {
   }
 }
 
+@media screen and (max-width: 800px) and (max-height: 1280px) {
+  .section__hero {
+
+    background: center top no-repeat url(../img/img-hero.png);
+    background-size: 150%;
+
+    height: 60vh;
+  }
+}
+
 /* Phones */
 @media screen and (max-width: 450px) {
   .section__hero {
