@@ -17,7 +17,7 @@ if(isset($_SESSION['info'])) {
   // Conect to data base
   $conn = mysqli_connect($servername, $username, $password, $database);
 
-  $sql = mysqli_query($connect, "INSERT INTO multistep(zipcode, age, household_size, household_estimated, anualhouse_hold)  VALUES('$zipcode', '$age', '$householdsize', '$householdestimated', '$anualhousehold')");
+  $sql = mysqli_query($connect, "INSERT INTO multistep(zipcode, age, household_size, household_estimated, anualhouse_hold) VALUES('$zipcode', '$age', '$householdsize', '$householdestimated', '$anualhousehold')");
 
 
   if($sql) {

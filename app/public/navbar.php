@@ -1,14 +1,14 @@
   <!-- Navbar -->
   <nav class="topnav" id="myTopnav">
     <div class="navBox">
-      <a  href="index.html" class="active">Home</a>
+      <a  href="index.php" class="active">Home</a>
       <a  href="#">Medicaid</a>
       <a  href="#">Health Listings</a>
       <a  href="#">Medicare Listings</a>
     
       <!-- Sub Nav -->
       <a onclick="dropDown()" class="dropbtn">Goverment Health <i class="fa-solid fa-caret-down"></i></a> <!-- ./Sub Nav -->
-      <a  href="referral.html">Referral</a>
+      <a  href="referral.php">Referral</a>
       <!-- Nav menu Btn -->
       <a  href="javascript:void(0);" class="navBarIcon" onclick="navBar()">
         <i class="fa-solid fa-bars"></i>
