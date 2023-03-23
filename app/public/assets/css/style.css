@@ -281,7 +281,7 @@ input::placeholder {
   background-size: 100%;
   height: 50vh;
   display: grid;
-  grid-template-columns: 2fr 280px 0.5fr;
+  grid-template-columns: 2fr 300px 0.5fr;
 }
 
 
@@ -555,6 +555,32 @@ input::placeholder {
 
 .current-step {
   background: var(--main-blue-color) !important; 
+}
+
+@media screen and (max-width: 600px) {
+  .section__stepsbar-icon span {
+    height: 65px;
+    width: 65px;
+
+    font-size: 1.8rem;
+  }
+
+  .section__stepsbar-icon p {
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .section__stepsbar-icon span {
+    height: 60px;
+    width: 60px;
+
+    font-size: 1.6rem;
+  }
+
+  .section__stepsbar-icon p {
+    font-size: 0.5rem;
+  }
 }
 
 /* ==================================
