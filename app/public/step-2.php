@@ -18,8 +18,17 @@ if(isset($_POST['next'])) {
     unset($_SESSION['info']['next']);
   }
 
-  // Redirecto to step-3.php
-  header("Location: step-3.php");
+
+  if ($age < 26) {
+    // Redirecto to rejected.php
+    header("Location: rejected.php");
+  } else if ($age > 25 && $age < 65) {
+    // Redirecto to step-3.php
+    header("Location: step-3.php");
+  } else if ($age > 64) {
+    header("Location: medicare.php");
+  }
+  
 }
 
 
