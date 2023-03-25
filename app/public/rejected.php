@@ -34,7 +34,7 @@
       <div>
         <br/>
         <br/>
-        <h1>Neque porro quisquam est qui dolorem ipsum quia dolor sit</h1>
+        <h1>Sorry this service is currently available only for people between 26 and 64 years old</h1>
       </div>
     </center>
       
