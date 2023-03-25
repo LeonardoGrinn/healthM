@@ -1,6 +1,7 @@
+<!-- Navbar -->
 <nav class="topnav" id="myTopnav">
     <div class="navBox">
-      <a  href="index.php" class="active">Home</a>
+      <a  href="index.php">Home</a>
       <a  href="#">Health Listings</a>
       <a  href="#">Medicare Listings</a>
     
@@ -16,12 +17,11 @@
   </nav>
   <!-- Drop Down Goverment Healt Option -->
   <div id="myDropdown" class="dropdown-content">
-    <a href="medicaid.php">Medicaid</a>
-    <a href="medicare.php">Medicare</a>
-    <a href="#">Affordable Care Act</a>
+    <a href="/goverment-health/medicaid.php">Medicaid</a>
+    <a href="/goverment-health/medicare.php">Medicare</a>
+    <a href="/goverment-health/affordable-care-act-plans.php">Affordable Care Act</a>
   </div><!-- Drop Down Goverment Healt Option -->
   <!-- ./Navbar -->
 
   <!-- Website Logo  -->
   <div class="website-logo">Logo</div>
-

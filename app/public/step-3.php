@@ -106,7 +106,7 @@ if(isset($_POST['next'])) {
     <!-- First Form -->
     <center>
       <form method="POST" class="section__step-form">
-        <label>What is your Household size?</label> <br/><br/>
+        <label>What is your Household (USD) size?</label> <br/><br/>
         <p><small><i>Include yourself, your spouse if married, and anyone you'll claim as a tax dependent</i></small></p> <br/>
         <input required type="number" value="<?= isset($_SESSION['info']['householdsize']) ? $_SESSION['info']['householdsize'] : '' ?>"  placeholder="Household Size" name="householdsize"> <br/>
         
@@ -122,6 +122,9 @@ if(isset($_POST['next'])) {
   </section><!-- section__currentStep -->
 
 </body>
+
+<!-- NavBar Script -->
+<script src="assets/js/navbar.js"></script>
 
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/6c23d26d8b.js" crossorigin="anonymous"></script>
