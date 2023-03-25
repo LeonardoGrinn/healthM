@@ -141,8 +141,8 @@ if (isset($_POST['next'])) {
 
       <h1>Goverment Health</h1>
 
-      <a href="#">Medicaid</a> <br/>
-      <a href="#">Medicare</a> <br/>
+      <a href="medicaid.php">Medicaid</a> <br/>
+      <a href="medicare.php">Medicare</a> <br/>
       <a href="#">Affordable Care Act Plans</a>
 
     </div><!-- ./section__info-health -->

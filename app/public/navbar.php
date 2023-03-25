@@ -1,4 +1,3 @@
-<!-- Navbar -->
 <nav class="topnav" id="myTopnav">
     <div class="navBox">
       <a  href="index.php" class="active">Home</a>
@@ -25,3 +24,4 @@
 
   <!-- Website Logo  -->
   <div class="website-logo">Logo</div>
+
