@@ -13,7 +13,7 @@ if(isset($_SESSION['info'])) {
   $servername = "localhost";
   $database = "u554046401_heathM";
   $username = "u554046401_heathM";
-  $password = "143dq3242tr245t45&/GY7";
+  $password = "112123@33223QQQQWs";
   // $username = "root";
   // $password = "";
   $statusConn;
@@ -60,7 +60,7 @@ if(isset($_SESSION['info'])) {
 <body>
 
 <!-- Navbar -->
-<?php include 'navbar.php';?>
+<?php include 'layout/navbar.php';?>
 <!-- Navbar -->
 
 

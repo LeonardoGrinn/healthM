@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="assets/css/icon-font.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
 
   <!-- Font Family -->
@@ -18,7 +18,7 @@
 <body>
 
 <!-- Navbar -->
-<?php include 'navbar.php';?>
+<?php include '../layout/navbar.php';?>
 <!-- Navbar -->
 
 
@@ -27,7 +27,7 @@
   <section class="section__regular_page padding-section">
 
     <div class="section__regular_page_title">
-      <h1>Medicaid</h1>
+      <h1>Medicare</h1>
     </div>
 
     <div class="section__regular_page_content">
@@ -44,34 +44,14 @@
 
   </section><!-- ./Section Steps -->
 
-  <!-- Section Info -->
-  <section class="section__info padding-section">
-    <!-- section__info-about -->
-    <dir class="section__info-about">
-
-      <h1>About</h1>
-      <p>USA Health Marketplace.org was created to inform US citizens of their health insurance options specifically for eligibility for 
-        Affordable Care Act government subsidized health insurance plans. Our goal is to provide a tool and a resource to determine if 
-        your eligibility for a ACA health insurance plan without asking or storing any personal information.</p>
-
-    </dir>  <!-- ./section__info-about -->
-
-    <!-- section__info-health -->
-    <div class="section__info-health">
-
-      <h1>Goverment Health</h1>
-
-      <a href="medicaid.php">Medicaid</a> <br/>
-      <a href="medicare.php">Medicare</a> <br/>
-      <a href="#">Affordable Care Act Plans</a>
-
-    </div><!-- ./section__info-health -->
-  </section> <!-- ./Section Info -->
+  <!-- Footer -->
+  <?php include '../layout/footer.php';?>
+  <!-- Footer -->
 
 </body>
 
 <!-- NavBar Script -->
-<script src="assets/js/navbar.js"></script>
+<script src="../assets/js/navbar.js"></script>
 
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/6c23d26d8b.js" crossorigin="anonymous"></script>

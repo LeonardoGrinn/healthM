@@ -30,7 +30,7 @@ if (isset($_POST['next'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="assets/css/icon-font.css">
+
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
 
@@ -43,7 +43,7 @@ if (isset($_POST['next'])) {
 <body>
 
 <!-- Navbar -->
-<?php include 'navbar.php';?>
+<?php include 'layout/navbar.php';?>
 <!-- Navbar -->
 
   <!-- Section Hero -->
@@ -124,29 +124,10 @@ if (isset($_POST['next'])) {
 
   </section><!-- ./Section Steps -->
 
-  <!-- Section Info -->
-  <section class="section__info padding-section">
-    <!-- section__info-about -->
-    <dir class="section__info-about">
-
-      <h1>About</h1>
-      <p>USA Health Marketplace.org was created to inform US citizens of their health insurance options specifically for eligibility for 
-        Affordable Care Act government subsidized health insurance plans. Our goal is to provide a tool and a resource to determine if 
-        your eligibility for a ACA health insurance plan without asking or storing any personal information.</p>
-
-    </dir>  <!-- ./section__info-about -->
-
-    <!-- section__info-health -->
-    <div class="section__info-health">
-
-      <h1>Goverment Health</h1>
-
-      <a href="#">Medicaid</a> <br/>
-      <a href="#">Medicare</a> <br/>
-      <a href="#">Affordable Care Act Plans</a>
-
-    </div><!-- ./section__info-health -->
-  </section> <!-- ./Section Info -->
+  <!-- Footer -->
+  <?php include 'layout/footer.php';?>
+  <!-- Footer -->
+  
 
 </body>
 

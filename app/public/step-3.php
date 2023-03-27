@@ -47,7 +47,7 @@ if(isset($_POST['next'])) {
 <body>
 
 <!-- Navbar -->
-<?php include 'navbar.php';?>
+<?php include 'layout/navbar.php';?>
 <!-- Navbar -->
 
   <!-- Website Logo  -->

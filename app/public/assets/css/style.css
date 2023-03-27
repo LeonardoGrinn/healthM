@@ -255,6 +255,67 @@ input::placeholder {
 
 /***************************************************************/
 /* =========================================================== */
+/* /////////////////////// F O O T E R /////////////////////// */
+/* =========================================================== */
+/***************************************************************/
+
+
+.section__info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  margin-top: 2.5rem;
+  background: var(--main-blue-color);
+
+  position: absolute;
+  bottom: 0;
+}
+
+.section__info h1 {
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+}
+
+.section__info-about, .section__info-health {
+  padding-top: 2rem;
+  padding-bottom: 2rem; 
+  color: white;
+}
+
+
+.section__info-health a {
+  color: white;
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (max-width: 800px)  {
+  .section__info {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .section__info-health {
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;  
+  }
+}
+
+@media screen and (max-width: 600px)  {
+
+  .section__info-health,
+  .section__info-about {
+    padding: 1rem;
+  }
+
+  .section__info-health {
+    margin-bottom: 1rem;
+  }
+}
+
+/***************************************************************/
+/* =========================================================== */
 /* //////////////////// H O M E  P A G E ///////////////////// */
 /* =========================================================== */
 /***************************************************************/
@@ -500,60 +561,7 @@ input::placeholder {
   }
 }
 
-/* ==================================
-///////////// I N F O ///////////// 
-================================== */
 
-.section__info {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 2rem;
-  margin-top: 2.5rem;
-  background: var(--main-blue-color);
-}
-
-.section__info h1 {
-  margin-bottom: 2rem;
-  font-size: 1.3rem;
-}
-
-.section__info-about, .section__info-health {
-  padding-top: 2rem;
-  padding-bottom: 2rem; 
-  color: white;
-}
-
-
-.section__info-health a {
-  color: white;
-}
-
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media screen and (max-width: 800px)  {
-  .section__info {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
-
-  .section__info-health {
-    padding-left: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;  
-  }
-}
-
-@media screen and (max-width: 600px)  {
-
-  .section__info-health,
-  .section__info-about {
-    padding: 1rem;
-  }
-
-  .section__info-health {
-    margin-bottom: 1rem;
-  }
-}
 
 /* Extra small devices (phones, 600px and down)
 @media only screen and (max-width: 600px) {...}
