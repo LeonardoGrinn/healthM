@@ -1,26 +1,44 @@
 <?php 
 // Start session 
 session_start();
+// session_destroy();
+$message =''; 
 
-if (isset($_POST['next'])) {
-  // Create a new session variable any input inside key and values from POST array.
-  foreach($_POST as $key => $value) {
-    $_SESSION['info'][$key] = $value;
-  } 
+if (isset($_POST['next'], $_POST['zipcode'])) {
+  $zipcode = $_POST['zipcode'];
 
-  //Remove Next Key 
+  // Initialize CURL session
+  $curl = curl_init();
+  // Set CURL session options
+  curl_setopt_array($curl, array(
+      CURLOPT_URL => "https://api.zippopotam.us/us/$zipcode",
+      CURLOPT_RETURNTRANSFER => true, // Return the response instead of printing it
+  ));
+  // Send HTTP GET request and store the response
+  $response = curl_exec($curl);
+  // Check for errors in the HTTP request
+  $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+  if ($http_code !== 200) {
+      $message = "Error: ZIP code not found.";
+  } else {
+      // Decode the JSON response and extract the state abbreviation
+      $data = json_decode($response, true);
+      $state_abbr = strtolower($data["country abbreviation"]);
+        // Crear el objeto info
+        $info = array(
+          'state' =>  $state_abbr,
+          'zipcode' => $zipcode,
+          'next' => $_POST['next']
+        );
+    
+        $_SESSION['info'] = $info;
 
-  $keys = array_keys($_SESSION['info']);
-  
-  if (in_array('next', $keys)) {
-    unset($_SESSION['info']['next']);
+      // Redirect to step 2
+      header("Location: step-2.php");
   }
-
-  //Redirect to Step 2 Page 
-  header("Location: step-2.php");
-
+  // Close the CURL session
+  curl_close($curl);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -62,9 +80,15 @@ if (isset($_POST['next'])) {
         <!-- First Form -->
         <center>
           <form method="POST" class="section__hero-form">
-            <input required type="text" pattern="[0-9]*" id="" placeholder="Zip Code" value="<?= isset($_SESSION['info']['zipcode']) ? $_SESSION['info']['zipcode'] : '' ?>" name="zipcode"> <br/>
+            <input required type="text" pattern="[0-9]*" id="" placeholder="Zip Code" name="zipcode"> <br/>
             <input class="btn btnForm" name="next" value="Get Started" type="submit">
           </form>
+    
+          <div>
+            <p class="section__hero-textbox-text">
+                <?php echo $message; ?>
+             </p>
+          </div>
         </center> <!-- ./First Form -->
 
        <center> <div class="section__hero-features">

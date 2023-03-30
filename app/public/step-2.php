@@ -3,17 +3,24 @@
 // Start Session
 session_start();
 
-if(isset($_POST['next'])) {
+if(isset($_POST['next'], $_POST['age'])) {
+  $age =  $_POST['age'];
+  
+  $current_date = new DateTime();
+  $birth_date =  $current_date->sub(new DateInterval("P{$age}Y"))->format('Y');
 
   // Extract Array so as we can use its key as variable name
   extract($_SESSION['info']);
 
-  // Create a new session variable any put inside key and values from POST array. 
-  foreach ($_POST as $key  => $value) {
+  $info = array(
+    $_POST,
+    $_SESSION['info'],
+    'birth_date' => $birth_date,
+    'age' =>  $age
+  );
 
-    $_SESSION['info'][$key] = $value;
-  }
-
+  $_SESSION['info'] = $info;
+  
   $keys = array_keys($_SESSION['info']);
 
   // Remove Next Key. 
@@ -26,20 +33,15 @@ if(isset($_POST['next'])) {
     header("Location: step-3.php");
   } 
 
-
   if ($age < 26) {
     // Redirecto to rejected.php
     header("Location: rejected.php");
   } 
   
-  
-  
   if ($age > 64) {
     header("Location: /goverment-health/medicare.php");
   }
-  
 }
-
 
 ?>
 
