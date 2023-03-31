@@ -1,7 +1,7 @@
 <?php 
 // Start session 
 session_start();
-
+session_destroy();
 if (isset($_POST['next'])) {
   // Create a new session variable any input inside key and values from POST array.
   foreach($_POST as $key => $value) {
@@ -18,7 +18,6 @@ if (isset($_POST['next'])) {
 
   //Redirect to Step 2 Page 
   header("Location: step-2.php");
-
 }
 
 ?>

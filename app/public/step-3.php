@@ -3,8 +3,6 @@
 // Start Session
 session_start();
 
-
-
 if(isset($_POST['next'])) {
 
   // Create a new session variable any put inside key and values from POST array. 

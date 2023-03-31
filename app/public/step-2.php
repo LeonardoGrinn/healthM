@@ -27,17 +27,15 @@ if(isset($_POST['next'])) {
   } 
 
 
-  if ($age < 26) {
+  if ($age < 24) {
     // Redirecto to rejected.php
     header("Location: rejected.php");
   } 
+
   
-  
-  
-  if ($age > 64) {
+  if ($age > 66) {
     header("Location: /goverment-health/medicare.php");
   }
-  
 }
 
 
