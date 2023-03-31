@@ -1,5 +1,4 @@
 <?php 
-
 // Start Session
 session_start();
 
@@ -11,22 +10,9 @@ if(isset($_POST['next'], $_POST['age'])) {
 
   // Extract Array so as we can use its key as variable name
   extract($_SESSION['info']);
-
-  $info = array(
-    $_POST,
-    $_SESSION['info'],
-    'birth_date' => $birth_date,
-    'age' =>  $age
-  );
-
-  $_SESSION['info'] = $info;
-  
-  $keys = array_keys($_SESSION['info']);
-
-  // Remove Next Key. 
-  if (in_array('next', $keys)) {
-    unset($_SESSION['info']['next']);
-  }
+  $_SESSION['info']['birth_date']= $birth_date;
+  $_SESSION['info']['age']= $age;
+  $_SESSION['info']['next']= $_POST['next'];
 
   if ($age > 25 && $age < 65) {
     // Redirecto to step-3.php

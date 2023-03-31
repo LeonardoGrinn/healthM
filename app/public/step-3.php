@@ -1,9 +1,6 @@
 <?php 
-
 // Start Session
 session_start();
-
-
 
 if(isset($_POST['next'])) {
 
@@ -11,20 +8,10 @@ if(isset($_POST['next'])) {
   foreach ($_POST as $key  => $value) {
     $_SESSION['info'][$key] = $value;
   }
+  extract($_SESSION['info']);
 
-  $keys = array_keys($_SESSION['info']);
-
-  $info = array(
-    $_POST,
-    'householdsize' =>  $_POST['householdsize'],
-    $_SESSION['info'],
-  );
-
-  $_SESSION['info'] = $info;
-  // Remove Next Key. 
-  if (in_array('next', $keys)) {
-    unset($_SESSION['info']['next']);
-  }
+  $_SESSION['info']['householdsize']=  $_POST['householdsize'];
+  $_SESSION['info']['next']= $_POST['next'];
 
   // Redirecto to step-3.php
   header("Location: step-4.php");

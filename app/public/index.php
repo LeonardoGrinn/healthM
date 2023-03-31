@@ -24,15 +24,10 @@ if (isset($_POST['next'], $_POST['zipcode'])) {
       // Decode the JSON response and extract the state abbreviation
       $data = json_decode($response, true);
       $state_abbr = strtolower($data["country abbreviation"]);
-        // Crear el objeto info
-        $info = array(
-          'state' =>  $state_abbr,
-          'zipcode' => $zipcode,
-          'next' => $_POST['next']
-        );
-    
-        $_SESSION['info'] = $info;
-
+        $_SESSION['info']['zipcode']= $zipcode;
+        $_SESSION['info']['state']= $state_abbr;
+        $_SESSION['info']['next']= $_POST['next'];
+        
       // Redirect to step 2
       header("Location: step-2.php");
   }

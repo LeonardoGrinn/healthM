@@ -1,28 +1,14 @@
 <?php 
-
 // Start Session
 session_start();
-
 if(isset($_POST['next'])) {
-
   // Create a new session variable any put inside key and values from POST array. 
-  foreach ($_POST as $key  => $value) {
-
-    $_SESSION['info'][$key] = $value;
-  }
-
-  $keys = array_keys($_SESSION['info']);
-
-  // Remove Next Key. 
-  if (in_array('next', $keys)) {
-    unset($_SESSION['info']['next']);
-  }
-
+  extract($_SESSION['info']);
+  $_SESSION['info']['householdestimated']=  $_POST['householdestimated'];
+  $_SESSION['info']['next']= $_POST['next'];
   // Redirecto to step-3.php
   header("Location: step-5.php");
 }
-
-
 ?>
 
 
