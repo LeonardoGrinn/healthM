@@ -1,24 +1,17 @@
 <?php 
-
 // Start Session
 session_start();
-
-
 
 if(isset($_POST['next'])) {
 
   // Create a new session variable any put inside key and values from POST array. 
   foreach ($_POST as $key  => $value) {
-
     $_SESSION['info'][$key] = $value;
   }
+  extract($_SESSION['info']);
 
-  $keys = array_keys($_SESSION['info']);
-
-  // Remove Next Key. 
-  if (in_array('next', $keys)) {
-    unset($_SESSION['info']['next']);
-  }
+  $_SESSION['info']['householdsize']=  $_POST['householdsize'];
+  $_SESSION['info']['next']= $_POST['next'];
 
   // Redirecto to step-3.php
   header("Location: step-4.php");
@@ -110,7 +103,7 @@ if(isset($_POST['next'])) {
       <form method="POST" class="section__step-form">
         <label>What is your Household (USD) size?</label> <br/><br/>
         <p><small><i>Include yourself, your spouse if married, and anyone you'll claim as a tax dependent</i></small></p> <br/>
-        <input required type="number" value="<?= isset($_SESSION['info']['householdsize']) ? $_SESSION['info']['householdsize'] : '' ?>"  placeholder="Household Size" name="householdsize"> <br/>
+        <input required type="number" min="1" max="8" value="<?= isset($_SESSION['info']['householdsize']) ? $_SESSION['info']['householdsize'] : '' ?>"  placeholder="Household Size" name="householdsize"> <br/>
         
         <!-- Form buttons -->
         <div>
