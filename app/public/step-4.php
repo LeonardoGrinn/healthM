@@ -1,14 +1,28 @@
 <?php 
+
 // Start Session
 session_start();
+
 if(isset($_POST['next'])) {
+
   // Create a new session variable any put inside key and values from POST array. 
-  extract($_SESSION['info']);
-  $_SESSION['info']['householdestimated']=  $_POST['householdestimated'];
-  $_SESSION['info']['next']= $_POST['next'];
+  foreach ($_POST as $key  => $value) {
+
+    $_SESSION['info'][$key] = $value;
+  }
+
+  $keys = array_keys($_SESSION['info']);
+
+  // Remove Next Key. 
+  if (in_array('next', $keys)) {
+    unset($_SESSION['info']['next']);
+  }
+
   // Redirecto to step-3.php
   header("Location: step-5.php");
 }
+
+
 ?>
 
 
@@ -92,7 +106,7 @@ if(isset($_POST['next'])) {
       <form method="POST" class="section__step-form">
         <label>What is your estimated annual Household income for 2023?</label> <br/><br/>
         <p><small><i>Enter your estimated income range for everyone your included in your Household</i></small></p> <br/>
-        <input required type="number" value="<?= isset($_SESSION['info']['householdestimated']) ? $_SESSION['info']['householdestimated'] : '' ?>"  placeholder="Household Estimated" name="householdestimated"> <br/>
+        <input required type="number" max="8" min="0" value="<?= isset($_SESSION['info']['householdestimated']) ? $_SESSION['info']['householdestimated'] : '' ?>"  placeholder="Household Estimated" name="householdestimated"> <br/>
         <!-- Form buttons -->
         <div>
           <a class="btn btnLink btn-red" href="step-3.php">Previous</a>

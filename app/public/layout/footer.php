@@ -17,7 +17,9 @@
 
       <a href="/goverment-health/medicaid.php">Medicaid</a> <br/>
       <a href="/goverment-health/medicare.php">Medicare</a> <br/>
-      <a href="/goverment-health/affordable-care-act-plans.php">Affordable Care Act Plans</a>
+      <a href="/goverment-health/affordable-care-act-plans.php">Affordable Care Act Plans</a> <br/>
+      <a href="/privacy-policy.php">Privacy Policy</a> <br/>
+      <a href="/website-terms.php">Website Terms</a>
 
     </div><!-- ./section__info-health -->
   </section> <!-- ./Section Info -->

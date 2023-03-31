@@ -2,8 +2,8 @@
 <nav class="topnav" id="myTopnav">
     <div class="navBox">
       <a  href="/index.php">Home</a>
-      <a  href="#">Health Listings</a>
-      <a  href="#">Medicare Listings</a>
+      <a  href="/health-listings.php">Health Listings</a>
+      <a  href="/medicare-listings.php">Medicare Listings</a>
     
       <!-- Sub Nav -->
       <a onclick="dropDown()" class="dropbtn">Goverment Health <i class="fa-solid fa-caret-down"></i></a> <!-- ./Sub Nav -->
@@ -24,4 +24,4 @@
   <!-- ./Navbar -->
 
   <!-- Website Logo  -->
-  <div class="website-logo">Logo</div>
+  <div class="website-logo"><img src="assets/img/logo.png" alt="imagen"></div>

@@ -12,10 +12,10 @@ if(isset($_SESSION['info'])) {
   //$servername = "sql910.main-hosting.eu";
   $servername = "localhost";
   $database = "u554046401_heathM";
- // $username = "u554046401_heathM";
- // $password = "112123@33223QQQQWs";
-  $username = "root";
-  $password = "";
+  $username = "u554046401_heathM";
+  $password = "112123@33223QQQQWs";
+  // $username = "root";
+  // $password = "";
   $statusConn;
 
   // Conect to data base
@@ -31,6 +31,7 @@ if(isset($_SESSION['info'])) {
     // echo 'Data has been saved succesfully!';
 
   } else {
+
     $statusConn = mysqli_error($conn);
     // echo mysqli_error($conn);
   }
