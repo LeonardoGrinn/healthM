@@ -1,28 +1,40 @@
 <?php 
 // Start session 
 session_start();
+session_destroy();
+$message =''; 
 
-if (isset($_POST['next'])) {
-  // Create a new session variable any input inside key and values from POST array.
-  foreach($_POST as $key => $value) {
-    $_SESSION['info'][$key] = $value;
-  } 
+if (isset($_POST['next'], $_POST['zipcode'])) {
+  $zipcode = $_POST['zipcode'];
 
-  //Remove Next Key 
-
-  $keys = array_keys($_SESSION['info']);
-  
-  if (in_array('next', $keys)) {
-    unset($_SESSION['info']['next']);
+  // Initialize CURL session
+  $curl = curl_init();
+  // Set CURL session options
+  curl_setopt_array($curl, array(
+      CURLOPT_URL => "https://api.zippopotam.us/us/$zipcode",
+      CURLOPT_RETURNTRANSFER => true, // Return the response instead of printing it
+  ));
+  // Send HTTP GET request and store the response
+  $response = curl_exec($curl);
+  // Check for errors in the HTTP request
+  $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+  echo   $http_code ;
+  if ($http_code !== 200) {
+      $message = "Error: ZIP code not found.";
+  } else {
+      // Decode the JSON response and extract the state abbreviation
+        $data = json_decode($response, true);
+        $state_abbr = strtolower($data["country abbreviation"]);
+        $_SESSION['info']['zipcode']= $zipcode;
+        $_SESSION['info']['state']= $state_abbr;
+        $_SESSION['info']['next']= $_POST['next'];
+      // Redirect to step 2
+      header("Location: step-2.php");
   }
-
-  //Redirect to Step 2 Page 
-  header("Location: step-2.php");
-
+  // Close the CURL session
+  curl_close($curl);
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,6 +50,16 @@ if (isset($_POST['next'])) {
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <title>Starter</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNH79EYLLD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SNH79EYLLD');
+  </script>
 </head>
 
 <body>
@@ -57,18 +79,22 @@ if (isset($_POST['next'])) {
       <!-- section__hero-textbox-content -->
       <div class="section__hero-textbox-content">
 
-        <center><h4>See if you qualify for goverment subsidized health insurance fo $10/month or less</h4></center>
+        <center><h4><u>4 out of 5</u> Americans are eligible for government subsidized health insurance for <u>$10 or less</u>. See if you qualify. <br><small><span>• 0 Primary Care Visits | • 0 Virtual Urgent Care | • $3 Prescription Drug Costs</span></small></h4></center>
 
         <!-- First Form -->
         <center>
           <form method="POST" class="section__hero-form">
-            <input required type="text" pattern="[0-9]*" id="" placeholder="Zip Code" value="<?= isset($_SESSION['info']['zipcode']) ? $_SESSION['info']['zipcode'] : '' ?>" name="zipcode"> <br/>
+            <input required type="text" pattern="[0-9]*" id="" placeholder="Zip Code" name="zipcode"> <br/>
             <input class="btn btnForm" name="next" value="Get Started" type="submit">
           </form>
+          <div>
+            <p class="section__hero-textbox-text">
+                <?php echo $message; ?>
+             </p>
+          </div>
         </center> <!-- ./First Form -->
-
+       
        <center> <div class="section__hero-features">
-          <p>• 4 out of 5 Qualify</p>
           <p>• 0 Primary Care Visits</p>
           <p>• 0 Virtual Urgent Care</p>
           <p>• $3 Prescription Drug Costs</p>
@@ -91,7 +117,7 @@ if (isset($_POST['next'])) {
   <section class="section__steps padding-section">
 
     <div class="section__steps-description"> <!-- Steps description -->
-      <center><p>Determine your eligibility for goverment subisidized healt insurance in 4 easy steps</p></center>
+      <center><p class="section__steps-description-text">Determine your eligibility for goverment subisidized healt insurance in 4 easy steps</p></center>
     </div> <!-- ./Steps description -->
 
     <div class="section__steps-box">
@@ -137,4 +163,8 @@ if (isset($_POST['next'])) {
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/6c23d26d8b.js" crossorigin="anonymous"></script>
 
+<!-- Tag para registrar el click -->
+<script>
+  gtag('event', 'page_view', { 'event_category': 'RegisterForm', 'event_label': 'View', 'value':'Step 1 - Homepage' });
+</script>
 </html>

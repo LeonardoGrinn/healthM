@@ -1,29 +1,14 @@
 <?php 
-
 // Start Session
 session_start();
 
-
-
 if(isset($_POST['next'])) {
-
-  // Create a new session variable any put inside key and values from POST array. 
-  foreach ($_POST as $key  => $value) {
-
-    $_SESSION['info'][$key] = $value;
-  }
-
-  $keys = array_keys($_SESSION['info']);
-
-  // Remove Next Key. 
-  if (in_array('next', $keys)) {
-    unset($_SESSION['info']['next']);
-  }
+  $_SESSION['info']['householdsize']=  $_POST['householdsize'];
+  $_SESSION['info']['next']= $_POST['next'];
 
   // Redirecto to step-3.php
   header("Location: step-4.php");
 }
-
 
 ?>
 
@@ -42,6 +27,17 @@ if(isset($_POST['next'])) {
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <title>Step 3 | Household Size</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNH79EYLLD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SNH79EYLLD');
+  </script>  
+
 </head>
 
 <body>
@@ -108,14 +104,14 @@ if(isset($_POST['next'])) {
     <!-- First Form -->
     <center>
       <form method="POST" class="section__step-form">
-        <label>What is your Household (USD) size?</label> <br/><br/>
+        <label>What is your Household size?</label> <br/><br/>
         <p><small><i>Include yourself, your spouse if married, and anyone you'll claim as a tax dependent</i></small></p> <br/>
-        <input required type="number" value="<?= isset($_SESSION['info']['householdsize']) ? $_SESSION['info']['householdsize'] : '' ?>"  placeholder="Household Size" name="householdsize"> <br/>
+        <input required type="number" max="8" min="0" value="<?= isset($_SESSION['info']['householdsize']) ? $_SESSION['info']['householdsize'] : '' ?>"  placeholder="Household Size" name="householdsize"> <br/>
         
         <!-- Form buttons -->
         <div>
-          <a class="btn btnLink btn-red" href="step-2.php">Previous</a>
-          <input class="btn btnForm" name="next" value="Next" type="submit">
+          <a  id="btBack" class="btn btnLink btn-red" href="step-2.php">Previous</a>
+          <input id="btNext" class="btn btnForm" name="next" value="Next" type="submit">
         </div>
         <!-- ./Form buttons -->
       </form>
@@ -130,5 +126,19 @@ if(isset($_POST['next'])) {
 
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/6c23d26d8b.js" crossorigin="anonymous"></script>
+
+<!-- Tag para registrar el click -->
+<script>
+document.getElementById("btBack").addEventListener("click", gtag_Back);
+document.getElementById("btNext").addEventListener("click", gtag_Next);
+
+function gtag_Next() {
+  gtag('event', 'click', { 'event_category': 'RegisterForm', 'event_label': 'Next', 'value':'Step 3 - Household Size' });
+}
+
+function gtag_Back() {
+  gtag('event', 'click', { 'event_category': 'RegisterForm', 'event_label': 'Back', 'value':'Step 3 - Household Size' });
+}
+</script>
 
 </html>

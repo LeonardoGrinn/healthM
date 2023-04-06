@@ -1,27 +1,18 @@
 <?php 
-
+include 'utils.php';
 // Start Session
 session_start();
 
-if(isset($_POST['next'])) {
+if(isset($_POST['next'], $_POST['anualhousehold'])) {
 
-  // Create a new session variable any put inside key and values from POST array. 
-  foreach ($_POST as $key  => $value) {
+  $_SESSION['info']['next']= $_POST['next'];
+  $householdSize=  $_SESSION['info']["householdsize"];
+  $income=  $_SESSION['info']["householdestimated"];
+  $lifeEvents =  $_SESSION['info']["anualhousehold"];
+  $state =  $_SESSION['info']["state"];
 
-    $_SESSION['info'][$key] = $value;
-  }
-
-  $keys = array_keys($_SESSION['info']);
-
-  // Remove Next Key. 
-  if (in_array('next', $keys)) {
-    unset($_SESSION['info']['next']);
-  }
-
-  // Redirecto to step-3.php
-  header("Location: thanks.php");
+  echo checkIncomeStepfive($householdSize, $income, $lifeEvents, $state);
 }
-
 
 ?>
 
@@ -40,6 +31,17 @@ if(isset($_POST['next'])) {
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <title>Step 5 | Life Events</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNH79EYLLD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SNH79EYLLD');
+  </script>  
+
 </head>
 
 <body>
@@ -116,8 +118,8 @@ if(isset($_POST['next'])) {
 
         <!-- Form buttons -->
         <div>
-          <a class="btn btnLink btn-red" href="step-4.php">Previous</a>
-          <input class="btn btnForm" name="next" value="Submit" type="submit">
+          <a id="btBack" class="btn btnLink btn-red" href="step-4.php">Previous</a>
+          <input id="btNext" class="btn btnForm" name="next" value="Submit" type="submit">
         </div>
         <!-- ./Form buttons -->
       </form>
@@ -132,5 +134,19 @@ if(isset($_POST['next'])) {
 
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/6c23d26d8b.js" crossorigin="anonymous"></script>
+
+<!-- Tag para registrar el click -->
+<script>
+document.getElementById("btBack").addEventListener("click", gtag_Back);
+document.getElementById("btNext").addEventListener("click", gtag_Next);
+
+function gtag_Next() {
+  gtag('event', 'click', { 'event_category': 'RegisterForm', 'event_label': 'Next', 'value':'Step 5 - Life Events' });
+}
+
+function gtag_Back() {
+  gtag('event', 'click', { 'event_category': 'RegisterForm', 'event_label': 'Back', 'value':'Step 5 - Life Events' });
+}
+</script>
 
 </html>

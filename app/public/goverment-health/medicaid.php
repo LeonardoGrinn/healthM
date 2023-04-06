@@ -17,7 +17,7 @@
 <body>
 
 <!-- Navbar -->
-<?php include '../layout/navbar.php';?>
+<?php require '../layout/navbar.php';?>
 <!-- Navbar -->
 
 

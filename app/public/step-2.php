@@ -1,45 +1,31 @@
 <?php 
-
 // Start Session
 session_start();
 
-if(isset($_POST['next'])) {
+if(isset($_POST['next'], $_POST['age'])) {
+  $age =  $_POST['age'];
+  
+  $current_date = new DateTime();
+  $birth_date =  $current_date->sub(new DateInterval("P{$age}Y"))->format('Y');
 
-  // Extract Array so as we can use its key as variable name
-  extract($_SESSION['info']);
-
-  // Create a new session variable any put inside key and values from POST array. 
-  foreach ($_POST as $key  => $value) {
-
-    $_SESSION['info'][$key] = $value;
-  }
-
-  $keys = array_keys($_SESSION['info']);
-
-  // Remove Next Key. 
-  if (in_array('next', $keys)) {
-    unset($_SESSION['info']['next']);
-  }
+  $_SESSION['info']['birth_date']= $birth_date;
+  $_SESSION['info']['age']= $age;
+  $_SESSION['info']['next']= $_POST['next'];
 
   if ($age > 25 && $age < 65) {
     // Redirecto to step-3.php
     header("Location: step-3.php");
   } 
 
-
   if ($age < 26) {
     // Redirecto to rejected.php
     header("Location: rejected.php");
   } 
   
-  
-  
   if ($age > 64) {
-    header("Location: /goverment-health/medicare.php");
+    header("Location: goverment-health/medicare.php");
   }
-  
 }
-
 
 ?>
 
@@ -58,6 +44,16 @@ if(isset($_POST['next'])) {
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <title>Step 2 | Age</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNH79EYLLD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SNH79EYLLD');
+  </script>
 </head>
 
 <body>
@@ -125,8 +121,8 @@ if(isset($_POST['next'])) {
         
          <!-- Form buttons -->
         <div>
-          <a class="btn btnLink btn-red" href="index.php">Go back</a>
-          <input class="btn btnForm" name="next" value="Next" type="submit">
+          <a id="btBack" class="btn btnLink btn-red" href="index.php">Go back</a>
+          <input id="btNext" class="btn btnForm" name="next" value="Next" type="submit">
         </div>
          <!-- ./Form buttons -->
 
@@ -142,5 +138,19 @@ if(isset($_POST['next'])) {
 
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/6c23d26d8b.js" crossorigin="anonymous"></script>
+
+<!-- Tag para registrar el click -->
+<script>
+document.getElementById("btBack").addEventListener("click", gtag_Back);
+document.getElementById("btNext").addEventListener("click", gtag_Next);
+
+function gtag_Next() {
+  gtag('event', 'click', { 'event_category': 'RegisterForm', 'event_label': 'Next', 'value':'Step 2 - Age' });
+}
+
+function gtag_Back() {
+  gtag('event', 'click', { 'event_category': 'RegisterForm', 'event_label': 'Back', 'value':'Step 2 - Age' });
+}
+</script>
 
 </html>

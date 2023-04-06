@@ -1,5 +1,5 @@
 function getJSONData() {
-    alert('Is working');
+    //alert('Is working');
 
     // New Instance
     const xhttp = new XMLHttpRequest();

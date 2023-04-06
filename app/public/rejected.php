@@ -18,11 +18,8 @@
 <body>
 
 <!-- Navbar -->
-<?php include 'navbar.php';?>
+<?php include 'layout/navbar.php';?>
 <!-- Navbar -->
-
-
-
 
   <!-- section__thanks-->
   <section class="section__rejected padding-section">
