@@ -4,6 +4,8 @@
 (function($) {
 	'use strict';
 	$(document).ready(function() {
+
+		//Quiz function
 		const quiz = {
 			init: function() {
 				this.cache();
@@ -43,6 +45,8 @@
 				}
 			},
 			lookUp: function() {
+
+				//Get ZipCode
 				var onSuccess = function(location) {
 					$('#zipcode').val(location.postal.code);
 					quiz.data.ip = location.traits.ip_address;
@@ -844,6 +848,8 @@ quiz.postLead();
 					};
 				}
 
+
+				/* Load Medicare Lsting */
 				MediaAlphaExchange__load('plans');
 				setTimeout(() => {
 					quiz.doStars();

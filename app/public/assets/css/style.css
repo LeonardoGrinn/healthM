@@ -472,6 +472,68 @@ input::placeholder {
   }
 }
 
+
+/* 15" Desktop */
+@media only screen and (min-width: 1920px) and (max-height: 1200px) {
+  .section__hero {
+    height: 1080px;
+    
+  }
+
+  .section__steps-icon span {
+    height: 150px;
+    width: 150px;
+
+    font-size: 4rem;
+  }
+
+  .section__steps-icon p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  } 
+
+  .section__steps-description-text {
+    font-size: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;  
+  }
+
+  .section-textbanner {
+    font-size: 2rem;
+  }
+
+}
+
+/* Full HD Desktop */
+@media only screen and (min-width: 1920px) and (max-height: 1080px) {
+  .section__hero {
+    height: 1080px;
+    
+  }
+
+  .section__steps-icon span {
+    height: 150px;
+    width: 150px;
+
+    font-size: 4rem;
+  }
+
+  .section__steps-icon p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  } 
+
+  .section__steps-description-text {
+    font-size: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .section-textbanner {
+    font-size: 2rem;
+  }
+}
+
 /* 15" Desktop */
 @media only screen and (min-width: 1440px) and (max-height: 900px) {
   .section__hero {
@@ -852,4 +914,10 @@ input::placeholder {
   padding-bottom: 8rem;
   overflow-y: auto;
 }
+
+/*******************************************************************/
+/* =============================================================== */
+/* ///////////////// L I S T I N G  P A G E S //////////////////// */
+/* =============================================================== */
+/*******************************************************************/
 

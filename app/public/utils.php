@@ -22,7 +22,7 @@ function checkIncomeStepFour($householdSize, $income, $state) {
     } 
     
     if ($incomePercent2023 >= 150 && $incomePercent2023 <= 400) {
-        header("Location: step5.php");
+        header("Location: step-5.php");
         exit;
     }
     
