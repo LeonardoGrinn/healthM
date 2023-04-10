@@ -810,6 +810,7 @@ input::placeholder {
   height: 25px;
   width: 100%;
   border: 2px solid var(--main-blue-color);
+  overflow-y: hidden;
 }
 
 .section__progressbar-filled {
@@ -841,6 +842,27 @@ input::placeholder {
   width: 50%;
 }
 
+.stepCheckbox {
+  width: 40%; 
+  height: 30px;
+  text-align:left !important;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .stepCheckbox {
+    width: 70%; 
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .stepCheckbox {
+    font-size: 0.8rem;
+  }
+
+}
 
 /* ==================================
 //////////// T H A N K S //////////// 

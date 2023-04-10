@@ -48,11 +48,11 @@
 
 				//Get ZipCode
 				var onSuccess = function(location) {
-					$('#zipcode').val(location.postal.code);
-					quiz.data.ip = location.traits.ip_address;
-					quiz.data.long_state_name = location.subdivisions['0'].names.en;
-					quiz.storedCity = location.city.names.en;
-					quiz.storedZip = location.postal.code;
+					// $('#zipcode').val(location.postal.code);
+					// quiz.data.ip = location.traits.ip_address;
+					// quiz.data.long_state_name = location.subdivisions['0'].names.en;
+					// quiz.storedCity = location.city.names.en;
+					// quiz.storedZip = location.postal.code;
 				};
 				var onError = function(error) {
 				//	console.log('Error:\n\n' + JSON.stringify(error, undefined, 4));
@@ -174,42 +174,42 @@
 
 
 
-				var fisrtname=localStorage.getItem("firstname");
+				let fisrtname=localStorage.getItem("firstname");
 				if(fisrtname!==''){
 				$('#first').val(fisrtname);
 				}
 
-				var lastname=localStorage.getItem("lastname");
+				let lastname=localStorage.getItem("lastname");
 				if(lastname!==''){
 				$('#last').val(lastname);
 				}
 
-				var email=localStorage.getItem("email");
+				let email=localStorage.getItem("email");
 				if(email!==''){
 				$('#email').val(email);
 				}
 
-				var phone=localStorage.getItem("phone");
+				let phone=localStorage.getItem("phone");
 				if(phone!==''){
 				$('#phone').val(phone);
 				}
 
-				var age=localStorage.getItem("age");
+				let age=localStorage.getItem("age");
 				if(age!==''){
 				$('#age').val(age);
 				}
 
-				var address=localStorage.getItem("address");
+				let address=localStorage.getItem("address");
 				if(address!==''){
 				$('#address').val(address);
 				}
 
-				var city=localStorage.getItem("city");
+				let city=localStorage.getItem("city");
 				if(city!==''){
 				$('#city').val(city);
 				}
 
-				var zip=localStorage.getItem("zip");
+				let zip=localStorage.getItem("zip");
 				if(zip!==''){
 				$('#zip').val(zip);
 				}
@@ -217,7 +217,7 @@
 				
 
 
-				var states=localStorage.getItem("state");
+				let states=localStorage.getItem("state");
 				if(states!==''){
 
 					$("#state").val(states).change();
@@ -225,7 +225,7 @@
 
 				}
 
-				var cancer=localStorage.getItem("cancer");
+				let cancer=localStorage.getItem("cancer");
 				if(cancer!==''){
 					if(cancer==1){
 					$('#cancer').prop('checked', true);
@@ -653,7 +653,7 @@
 				submit.zip = $('#zipcode_02').val();
 				//console.log(submit);
 */
-//MOD BY JC
+//MOD BY JC Here you define the parameters to get de Medicare JSON List
 var submit = {};
 				submit.type = type;
 				submit.version = 18;

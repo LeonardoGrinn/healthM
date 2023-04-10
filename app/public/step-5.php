@@ -113,13 +113,46 @@ if(isset($_POST['next'], $_POST['anualhousehold'])) {
         <label>What is your estimated annual Household income for 2023?</label> <br/><br/>
         <p><small><i>Enter your estimated income range for everyone your included in your Household</i></small></p> <br/>
         
-        <select required style="width: 50%;" class="btn btnForm" value="<?= isset($_SESSION['info']['anualhousehold']) ? $_SESSION['info']['anualhousehold'] : '' ?>" name="anualhousehold">
+        <!-- <select required style="width: 50%;" class="btn btnForm" value="<?= isset($_SESSION['info']['anualhousehold']) ? $_SESSION['info']['anualhousehold'] : '' ?>" name="anualhousehold">
           <option value="Losing or lost health coverage">Losing or lost health coverage</option>
           <option value="Changes with my family">Changes with my family</option>
           <option value="Started or left a job">Started or left a job</option>
           <option value="Move to a new state">Move to a new state</option>
           <option value="None of these apply">None of these apply</option>
-        </select>
+        </select> -->
+
+        <div class="btn btnForm stepCheckbox">
+          <input type="checkbox" id="event1" name="anualhousehold" value="Losing or lost health coverage">
+          <label for="event1"> Losing or lost health coverage</label><br>
+        </div>
+
+        <div class="btn btnForm stepCheckbox">
+          <input type="checkbox" id="event2" name="anualhousehold" value="Changes with my family">
+          <label for="event2"> Changes with my family</label><br>
+        </div>
+
+        <div class="btn btnForm stepCheckbox">
+          <input type="checkbox" id="event3" name="anualhousehold" value="Started or left a job">
+          <label for="event3"> Started or left a job</label><br><br>
+        </div>
+        
+        <div class="btn btnForm stepCheckbox">
+          <input type="checkbox" id="event4" name="anualhousehold" value="Move to a new state">
+          <label for="event4"> Move to a new state</label><br><br>
+        </div>
+
+        <div class="btn btnForm stepCheckbox">
+          <input type="checkbox" id="event5" name="anualhousehold" value="Move to a new state">
+          <label for="event5"> Move to a new state</label><br><br>
+        </div>
+
+        <div class="btn btnForm stepCheckbox">
+          <input type="checkbox" id="event6" name="anualhousehold" value="None of these apply">
+          <label for="event6"> None of these apply</label><br><br>
+        </div>
+        
+        
+        
 
         <!-- Form buttons -->
         <div>
